@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">NSS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+
+    <string-array name="def_activity">
+        <item>College Activity 🏟</item>
+        <item>University Activity 📚</item>
+        <item>Society Upliftment Activity 🙌</item>
+        <item>Swaach Bharat Activity ⚡</item>
+    </string-array>
+    <string name="title_activity_splash">SplashActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_starter">StarterActivity</string>
+
+</resources>

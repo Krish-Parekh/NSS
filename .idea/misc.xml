@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/drawable/card_corner.xml" value="0.3828125" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/drawable/date_pic.xml" value="0.3828125" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/drawable/ic_edit.xml" value="0.3828125" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/drawable/radio_normal.xml" value="0.3828125" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/drawable/radio_selected.xml" value="0.3828125" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/drawable/radio_selector.xml" value="0.3828125" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/drawable/text_color.xml" value="0.3828125" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/drawable/time_pick.xml" value="0.3828125" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/drawable/user_position.xml" value="0.3828125" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/activity_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/activity_starter.xml" value="0.25" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/content_starter.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/enrol_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/fragment_activity.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/fragment_base.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/fragment_edit.xml" value="0.35104166666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/fragment_enrol.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/fragment_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/fragment_sign_up.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/fragment_team.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/loading_dialog.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/layout/team_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/menu/base_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Practice/NSS2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
