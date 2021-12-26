@@ -12,7 +12,7 @@ The following **required** functionality is completed:
   * [x]  Core member can create activity
   * [x]  Non-Core member can only view activity  
 * [x] Create , Update , Delete (activity / event) organised by committee.
-* [x] Assign to task to member like email photo or report
+* [x] Assign task to member like email photo or report
 
 ## Video Walkthrough
 
