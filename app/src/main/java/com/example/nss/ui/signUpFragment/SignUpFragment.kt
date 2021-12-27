@@ -20,8 +20,11 @@ import com.example.nss.model.User
 import com.example.nss.utils.dismissDialogBox
 import com.example.nss.utils.getDialogBox
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthEmailException
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import java.lang.Exception
 import java.util.*
 
 private const val TAG = "SIGNUP"
@@ -101,9 +104,18 @@ class SignUpFragment : Fragment() {
                     uploadImageToFireStorage(username, email, mAuth.currentUser?.uid!!)
                 }
             }
-            .addOnFailureListener {
-                Toast.makeText(requireContext(), "Error : $it", Toast.LENGTH_SHORT).show()
+            .addOnFailureListener { exception ->
+                Toast.makeText(requireContext(), "Error : $exception", Toast.LENGTH_SHORT).show()
                 dismissDialogBox()
+                try{
+                    throw exception
+                }catch (e : FirebaseAuthWeakPasswordException){
+                    Toast.makeText(requireContext(), "Error : Weak Password", Toast.LENGTH_SHORT).show()
+                }catch (e : FirebaseAuthEmailException){
+                    Toast.makeText(requireContext(),"Error : Email Not Valid", Toast.LENGTH_SHORT).show()
+                }catch (e : Exception){
+                    Toast.makeText(requireContext(), "Error : $exception", Toast.LENGTH_SHORT).show()
+                }
             }
     }
 
@@ -136,9 +148,9 @@ class SignUpFragment : Fragment() {
                 Toast.makeText(requireContext(), "SignUp Success", Toast.LENGTH_SHORT).show()
                 goToBaseFragment()
             }
-            .addOnFailureListener {
-                Toast.makeText(requireContext(), "Error : $it", Toast.LENGTH_SHORT).show()
+            .addOnFailureListener { exception ->
                 dismissDialogBox()
+                Toast.makeText(requireContext(), "Error : $exception", Toast.LENGTH_SHORT).show()
             }
     }
 

@@ -14,8 +14,11 @@ import com.example.nss.databinding.FragmentLoginBinding
 import com.example.nss.utils.dismissDialogBox
 import com.example.nss.utils.getDialogBox
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
 
-private const val TAG = "LOGIN"
+private const val TAG = "LoginFragment"
+
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var mAuth: FirebaseAuth
@@ -31,7 +34,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val topAnim = AnimationUtils.loadAnimation(requireContext(),R.anim.fade_in)
+        val topAnim = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         binding.ivLogin.animation = topAnim
         activity?.actionBar?.hide()
 
@@ -39,18 +42,22 @@ class LoginFragment : Fragment() {
         mAuth = FirebaseAuth.getInstance()
 
 
-        if (mAuth.currentUser != null){
+        if (mAuth.currentUser != null) {
             getDialogBox(requireContext())
             gotoBaseFragment()
         }
         binding.btnLogin.setOnClickListener {
-            val email = binding.etEmail.text.toString().trim{it <= ' '}
-            val password = binding.etPassword.text.toString().trim{it <= ' '}
+            val email = binding.etEmail.text.toString().trim { it <= ' ' }
+            val password = binding.etPassword.text.toString().trim { it <= ' ' }
             getDialogBox(requireContext())
-            if(verifyLoginCredentials(email,password)) {
+            if (verifyLoginCredentials(email, password)) {
                 signInUser(email, password)
-            }else{
-                Toast.makeText(requireContext(), "Please enter you credentials properly", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Please enter you credentials properly",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
             binding.etEmail.text.clear()
@@ -68,14 +75,25 @@ class LoginFragment : Fragment() {
     }
 
     private fun signInUser(email: String, password: String) {
-        mAuth.signInWithEmailAndPassword(email,password)
+
+        mAuth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener { authResult ->
-                Log.i(TAG,"User Signed in Success $authResult")
+                Log.i(TAG, "User Signed in Success $authResult")
                 gotoBaseFragment()
             }
             .addOnFailureListener { exception ->
                 dismissDialogBox()
-                Log.i(TAG,"Some error as occurred $exception")
+                try {
+                    throw exception
+                } catch (e: FirebaseAuthInvalidCredentialsException) {
+                    Toast.makeText(requireContext(), "Credentials Invalid", Toast.LENGTH_SHORT).show()
+                    binding.etPassword.requestFocus()
+                } catch (e: FirebaseAuthInvalidUserException) {
+                    Toast.makeText(requireContext(), "Invalid user please check your Email-ID and Password", Toast.LENGTH_SHORT).show()
+                    binding.etEmail.requestFocus()
+                } catch (e: Exception) {
+                    Log.i(TAG, "Exception ${e.message}")
+                }
             }
     }
 
